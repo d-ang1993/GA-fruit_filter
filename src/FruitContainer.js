@@ -10,7 +10,7 @@ const FruitFilter = props => (
   <div>
     <label htmlFor="fruit-filter">Filter these Fruits: </label>
     <input type="text" value={props.value} onChange={props.onChange} name="fruit-filter" />
-   </div>
+  </div>
 )
 
 
@@ -30,6 +30,7 @@ class FruitContainer extends Component {
     event.preventDefault()
     const filterValue = event.target.value;
     this.setState((prevState, props) => {
+      console.log(props)
       // remove fruits that don't contain the filter value
       const filteredFruitList = props.fruits.filter(fruit =>
         fruit.toLocaleLowerCase().includes(filterValue.toLocaleLowerCase()));
